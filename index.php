@@ -1,29 +1,63 @@
 <?php
 
-require_once __DIR__ . "./class/Esteira.class.php";
-require_once __DIR__ . "./class/Pecas.class.php";
-require_once __DIR__ . "./class/Sensor.class.php";
+require_once __DIR__ . "/class/Esteira.class.php";
+require_once __DIR__ . "/class/Peca.class.php";
+require_once __DIR__ . "/class/Sensor.class.php";
+
+// 1. DECLARAÇÃO DE VARIÁVEIS E INICIALIZAÇÃO
+
+$sensorId = 1;
+$totalPecasProduzidas = 5;
+$contadorPecas = 0;
+$contadorSensores = 0;
+$lotePecas = [];
+
+// criação do objeto esteira e do objeto sensor
+$sensor = new Sensor($sensorId, "SENSOR-ULTRA", 0.0);
+$esteira = new Esteira(1, "X-01", "Esteira de produção Ultra");
 
 
-//loop para criar 3 sensores (pensar em apenas 1 sensor)
-// adicionar variavel de controle de id (count incrementado)
-// gerar leituras de temperaturas de forma aleatoria (uso de funções)
+// Loop para a produção de 5 lotes
+for($i = 0; $i < $totalPecasProduzidas; $i++){
+    $contadorPecas++;
+    $nomePeca = "Peça #" . $contadorPecas;
 
-for($i = 0; $i < 3; $i++){
+    $novaLeitura = rand(450, 950) / 10;
 
+    $sensor->setLeituraTemperatura($novaLeitura);
+
+    $temperaturaAtual = $sensor->getLeituraTemperatura();
+
+    $objetoPeca = new Peca($contadorPecas, $nomePeca);
+
+    array_push($lotePecas, [
+        "id" => $contadorPecas,
+        "peca" => $objetoPeca,
+        "id_sensor" => $sensor->getId(),
+        "modelo_sensor" => $sensor->getModelo(),
+        "temperatura" => $temperaturaAtual,
+        'timestamp'   => date('H:i:s')
+    ]);
 }
 
-//loop para criar 5 pecas
-// armazenar cada peça no lote (array)
-// adicionar variavel de controle de id (count incrementado)
-// gerar nomes para peça
+// interação do array de lote de peças 
 
-for($i = 0; $i < 5; $i++){
-    
+foreach($lotePecas as $item){
+    $idLote = $item["id"];
+    $objetoPeca = $item["peca"];
+    $idSensor = $item["id_sensor"];
+    $temperatura = $item["temperatura"];
+
+    //para realizar a leitura de outras informações armazenadas dentro do vetor
+    //siga o mesmo padrão de declaração de variavel armazenando o item que esta armazenado no vetor.
+    // estrutura chave-valor
+    // exemplo: chave "id_sensor" e valor = 1
+
+    /*
+     * PONTO DE ENTREGA PARA O INTEGRANTE B:
+     * O Integrante B utilizará $tempLeitura nas condicionais:
+     * - Normal:  $tempLeitura < 60
+     * - Atenção: $tempLeitura >= 60 && $tempLeitura <= 80
+     * - Crítico: $tempLeitura > 80
+     */
 }
-
-// criação de uma esteira
-
-$esteira = new Esteira(1, "X-01", "esteira01");
-
-

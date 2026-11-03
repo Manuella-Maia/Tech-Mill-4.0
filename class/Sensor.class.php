@@ -23,4 +23,8 @@ class Sensor{
     public function getLeituraTemperatura(): int{
         return $this->leitura_temperatura;
     } 
+
+    public function setLeituraTemperatura(float $leituraGerada): void{
+        $this->leitura_temperatura = $leituraGerada;
+    }
 }

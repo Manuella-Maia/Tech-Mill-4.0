@@ -1,6 +1,6 @@
 <?php
 
-class Pecas{
+class Peca{
     // definição dos atributos da classe Peça e dos tipos de dados
     private int $id_peca;
     private string $nome_peca;
