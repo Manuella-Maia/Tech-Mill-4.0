@@ -1,0 +1,9 @@
+# Arquivos de configuração privados
+.env
+
+# Arquivos temporários de sessão PHP
+sessions/*
+!sessions/.gitkeep
+
+# Arquivos do macOS
+.DS_Store

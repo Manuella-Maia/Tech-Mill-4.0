@@ -20,11 +20,21 @@ class Sensor{
         return $this->modelo;
     }
 
-    public function getLeituraTemperatura(): int{
+    public function getLeituraTemperatura(): float{
         return $this->leitura_temperatura;
     } 
 
     public function setLeituraTemperatura(float $leituraGerada): void{
         $this->leitura_temperatura = $leituraGerada;
+    }
+
+    public function ClassificarTemperatura(): string{
+        if($this->leitura_temperatura < 60){
+            return "Normal";
+        }else if ($this->leitura_temperatura <= 80){
+            return "Atenção";
+        }else{
+            return "Crítico";
+        }
     }
 }
