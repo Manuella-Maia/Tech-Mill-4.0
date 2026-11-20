@@ -1,0 +1,176 @@
+
+/* =================================
+   1. CONFIGURAÇÕES GERAIS
+================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url("../docs/img/fundo_pagina.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 25px;
+}
+
+
+/* =================================
+   2. CABEÇALHO
+================================= */
+
+.cabecalho {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.cabecalho img {
+    max-width: 280px;
+    width: 100%;
+}
+
+
+/* =================================
+   3. PAINEL PRINCIPAL
+================================= */
+
+.painel {
+    max-width: 1100px;
+    margin: auto;
+    padding: 25px;
+    background-color: rgba(255, 255, 255, 0.94);
+    border-radius: 10px;
+}
+
+.painel h1 {
+    color: #06452f;
+    margin-bottom: 10px;
+}
+
+.painel p {
+    color: #555;
+    margin-bottom: 20px;
+}
+
+
+/* =================================
+   4. INFORMAÇÕES DA PRODUÇÃO
+================================= */
+
+.meta-producao {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+    color: #06452f;
+    font-weight: bold;
+}
+
+.status-concluido {
+    background-color: #e1f4e8;
+    color: #087a43;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+
+/* =================================
+   5. TABELA DE PRODUÇÃO
+================================= */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: white;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+th {
+    background-color: #06452f;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f5f3;
+}
+
+
+/* =================================
+   6. ESTADOS DE TEMPERATURA
+================================= */
+
+.estado {
+    font-weight: bold;
+}
+
+.estado.normal {
+    color: #087a43;
+    background-color: #e1f4e8;
+}
+
+.estado.atenção {
+    color: #a56800;
+    background-color: #fff1cc;
+}
+
+.estado.critico {
+    color: #c62828;
+    background-color: #fde2e2;
+}
+
+
+/* =================================
+   7. AVISO DE PARADA
+================================= */
+
+.aviso-critico {
+    background-color: #f9ebeb;
+    border: 1px solid #c62828;
+    border-left: 5px solid #c62828;
+    color: #a51f1f;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 5px;
+}
+
+.aviso-critico strong {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.aviso-critico p {
+    margin: 0;
+}
+
+
+/* =================================
+   8. BOTÕES
+================================= */
+
+button {
+    background-color: #06452f;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #08734c;
+}
+
